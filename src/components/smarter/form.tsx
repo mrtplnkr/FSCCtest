@@ -46,7 +46,11 @@ export function SimpleForm(props: SimpleFormProps) {
             />
           </label>
         </div>
-        <ReusableButton className="primary" type="submit">
+        <ReusableButton
+          disabled={!formik.dirty && formik.isValid}
+          className="primary"
+          type="submit"
+        >
           Login
         </ReusableButton>
       </form>

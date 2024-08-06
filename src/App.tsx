@@ -1,14 +1,19 @@
 import "./App.css";
-import { SimpleForm } from "./components/smart/form";
+import { SimpleForm } from "./components/smarter/form";
 import omsLogo from "./assets/omsLogo.svg";
 import fsccLogo from "./assets/fsccLogo.svg";
 import { useEffect, useState } from "react";
 import { ReusableButton } from "./components/dumb/reusableButton";
+import { useDictionary } from "./components/dictionary";
+import { LanguageSelector } from "./components/smart/languageSelector";
 
 function App() {
   const [token, setToken] = useState<string | null>(() =>
     localStorage.getItem("token")
   );
+
+  const [currentLang, setCurrentLang] = useState<string>("LT");
+  const { translate } = useDictionary();
 
   useEffect(() => {
     localStorage.setItem("token", token ? token : "");
@@ -25,11 +30,13 @@ function App() {
   return (
     <>
       <div className="screenDivider">
-        <div className="backgroundContainer"></div>
+        <div className="backgroundContainer" />
         <div className="mainContent">
+          <LanguageSelector setLanguage={setCurrentLang} />
           <div>
             <img src={omsLogo} />
           </div>
+          <h3>{translate(currentLang, "Greetings")}</h3>
           <div className="formContainer">
             {token ? (
               <>
@@ -37,8 +44,11 @@ function App() {
                   <span className="bold">El. pastas: </span>
                   <span>{token}</span>
                 </div>
-                <ReusableButton onClick={() => setToken("")}>
-                  Atsijungti
+                <ReusableButton
+                  className="primary"
+                  onClick={() => setToken("")}
+                >
+                  Logout
                 </ReusableButton>
               </>
             ) : (

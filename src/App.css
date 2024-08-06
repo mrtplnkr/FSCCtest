@@ -86,6 +86,10 @@ button.primary {
   color: white;
   margin: 10px;
 }
+button.primary:disabled {
+  background: #EBEFF9;
+  color: grey;
+}
 input {
   min-width: 127px;
   width: 80%;
@@ -101,4 +105,19 @@ input {
 
 .bold {
   font-weight: bold;
+}
+
+.languageBar {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  text-align: right;
+}
+
+.menuChevron {
+  cursor: pointer;
+  border: 1px solid red;
+  transform: rotate(90deg);
+  font-weight: bold;
+  font-size: 50px;
 }

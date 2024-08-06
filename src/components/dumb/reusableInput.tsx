@@ -1,8 +1,6 @@
-import { InputHTMLAttributes, ReactNode } from "react";
+import { InputHTMLAttributes } from "react";
 
-interface ReusableInputProps extends InputHTMLAttributes<HTMLInputElement> {
-  children?: ReactNode;
-}
+interface ReusableInputProps extends InputHTMLAttributes<HTMLInputElement> {}
 
 export function ReusableInput({ ...props }: ReusableInputProps) {
   return (
