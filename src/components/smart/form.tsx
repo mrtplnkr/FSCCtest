@@ -18,7 +18,6 @@ export function SimpleForm(props: SimpleFormProps) {
       password: "",
     },
     onSubmit: (values: LoginFormData) => {
-      alert(JSON.stringify(values, null, 2));
       props.onSubmit(values.email, values.password);
     },
   });

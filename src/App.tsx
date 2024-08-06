@@ -1,7 +1,6 @@
 import "./App.css";
 import { SimpleForm } from "./components/smart/form";
 import omsLogo from "./assets/omsLogo.svg";
-// import background from "./assets/background.svg";
 import fsccLogo from "./assets/fsccLogo.svg";
 import { useEffect, useState } from "react";
 import { ReusableButton } from "./components/dumb/reusableButton";
@@ -26,9 +25,7 @@ function App() {
   return (
     <>
       <div className="screenDivider">
-        <div className="backgroundContainer">
-          {/* <img src={background} /> */}
-        </div>
+        <div className="backgroundContainer"></div>
         <div className="mainContent">
           <div>
             <img src={omsLogo} />
@@ -36,8 +33,8 @@ function App() {
           <div className="formContainer">
             {token ? (
               <>
-                <div className="m-3">
-                  <span className="bold">El. pastas:</span>
+                <div>
+                  <span className="bold">El. pastas: </span>
                   <span>{token}</span>
                 </div>
                 <ReusableButton onClick={() => setToken("")}>
@@ -50,7 +47,7 @@ function App() {
               />
             )}
           </div>
-          <div className="footer">
+          <div className="m-3">
             <img src={fsccLogo} />
           </div>
         </div>
