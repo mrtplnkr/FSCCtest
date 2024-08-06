@@ -1,0 +1,101 @@
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.screenDivider {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 600px) {
+  .screenDivider {
+    flex-direction: row;
+  }
+  .backgroundContainer {
+    transform: rotate(-90deg);
+    z-index:-1;
+    opacity: 0.1;
+  }
+
+  html, body, #root, .screenDivider {
+    height: 100%;
+    flex: 1;
+  }
+}
+
+.backgroundContainer {
+  min-height: 250px;
+  background: url('./assets/background.svg') no-repeat;
+  background-size: 100% auto;
+  flex: 1;
+}
+
+.mainContent {
+  flex: 1;
+  margin: 3em 10px;
+  padding: 10px;
+}
+
+.formContainer {
+  margin: 3em 0;
+}
+
+button.primary {
+  min-width: 127px;
+  width: 80%;
+  height: 48px;
+  border-radius: 6px;
+  padding: 8px 20px;
+  background: #286EE6;
+  color: white;
+  margin: 10px;
+}
+input {
+  min-width: 127px;
+  width: 80%;
+  height: 48px;
+  border: 1px solid #D0D5DD;
+  border-radius: 6px;
+  margin: 10px;
+}
+
+.m-3 {
+  margin: 3em;
+}
+
+.bold {
+  font-weight: bold;
+}
