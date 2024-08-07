@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { ReusableButton } from "./components/dumb/reusableButton";
 import { useDictionary } from "./components/dictionary";
 import { LanguageSelector } from "./components/smart/languageSelector";
+import { useServices } from "./services.ts/service";
 
 function App() {
   const [token, setToken] = useState<string | null>(() =>
@@ -19,12 +20,17 @@ function App() {
     localStorage.setItem("token", token ? token : "");
   }, [token]);
 
+  const { loginCall, logoutCall } = useServices();
+
   async function submitForm(email: string, password: string): Promise<void> {
     console.log(email, password);
-    const response = await fetch("https://jsonplaceholder.typicode.com/users");
-    const data = await response.json();
-    const rnd = Math.floor(Math.random() * 10);
-    setToken(data[rnd].username);
+    const tok = await loginCall();
+    setToken(tok);
+  }
+
+  async function logoffCall() {
+    await logoutCall(token!);
+    setToken("");
   }
 
   return (
@@ -46,7 +52,7 @@ function App() {
                 </div>
                 <ReusableButton
                   className="primary"
-                  onClick={() => setToken("")}
+                  onClick={() => logoffCall()}
                 >
                   Logout
                 </ReusableButton>
