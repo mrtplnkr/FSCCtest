@@ -6,7 +6,7 @@ interface SimpleFormProps {
   onSubmit: (email: string, password: string) => void;
 }
 
-export interface LoginFormData {
+interface LoginFormData {
   email: string;
   password: string;
 }
