@@ -57,6 +57,7 @@
   .backgroundContainer {
     z-index:-1;
     opacity: 0.9;
+    transform: rotate(0deg);
   }
 
   html, body, #root, .screenDivider {
