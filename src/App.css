@@ -46,7 +46,7 @@
   background: url('./assets/background.png') repeat;
   background-size: 100% auto;
   flex: 1;
-  transform: rotate(0deg);
+  transform: rotate(90deg);
   opacity: 0.5;
 }
 
